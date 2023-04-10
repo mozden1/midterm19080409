@@ -1,0 +1,63 @@
+---
+title: "Factors affecting purchasing decisions"
+author: 
+  - ÖZDEN, Mehmet [^1]
+bibliography: ../bibliography/biblio.bib
+csl: ../csl/apa.csl
+header-includes:
+  - \usepackage{polyglossia}
+  - \setmainlanguage{english}
+  - \usepackage{booktabs}
+  - \usepackage{caption} 
+  - \captionsetup[table]{skip=10pt}
+output:
+  bookdown::pdf_document2:
+    fig_caption: yes
+    fig_height: 3
+    fig_width: 4
+    keep_tex: no
+    latex_engine: xelatex
+    number_sections: yes
+    toc: no
+geometry: margin=1in
+link-citations: yes
+urlcolor: blue
+fontsize: 12pt
+biblio-style: apalike
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(cache = FALSE, echo = TRUE, message = FALSE, warning = FALSE)
+```
+
+<!-- ======================================================================= -->
+<!-- ============================== FOOTNOTES ============================== -->
+<!-- ======================================================================= -->
+[^1]: 19080409
+
+# Introduction
+In the modern world, that is, nowadays,shopping has evolved to a very different side from buying the things we need anymore.The biggest reason for this evolution is that the marketing policies of companies are very advanced.In this study, I want to investigate according to which criteria people make these purchasing decisions.To investigate this, I conducted a survey on google and asked people questions about their shopping habits.People answered the majority of the survey at a young age, and the proportion of men and women who answered the survey was kept equal in order to ensure that the sample was correct
+
+## Literature Review
+
+Consumer behavior is a broad field that includes many variables that affect people's purchasing behavior.[@chikweche2010understanding] The various factors that influence consumers to purchase particular goods or services have been the subject of several research. Chikweche and Fletcher (2010) concentrated on subsistence markets and discovered various elements, such as cultural values, social interactions, product availability, and pricing, that influence customer purchases. Similar to this, Kidane and Sharma (2016) looked at what influences consumers' e-commerce platform purchases and discovered that characteristics like product quality, trust, ease, and website design were important motivators.
+
+In addition to these elements, Mirabi, Akbariyeh, and Tahmasebifard (2015)[@mirabi2015study] discovered that the qualities of the product, brand reputation, perceived risk, and price sensitivity had a substantial impact on customers' purchase intentions. The literature on consumer behavior was examined by Haghshenas, Abedi, Ghorbani, Kamali, and Harooni in 2013.based on a review of the literature on consumer behavior, a variety of elements, such as demographic traits, way of life, drive, attitude, and perception, might influence buying decisions.[@kidane2016factors]
+
+
+In a 2012 study, Azzadina, Huda, and Sianipar explored the connections [@azzadina2012understanding]between personality types, elements of the marketing mix, and consumer behavior. They discovered that personality qualities can have a big impact on how people feel and what they decide to buy. For example, those who score highly on being open to new experiences are more likely to be influenced by marketing mix elements like product design, promotions, and pricing. Additionally, they discovered that consumers with high conscientiousness scores are more likely to base their selections on brand reputation and product quality.
+
+Finally, Wachyuni and Priyambodo (2020) [@wachyuni2020influence]looked into how celebrity endorsements affected restaurant patrons' decisions to buy certain items.decisions. They discovered that celebrity endorsement greatly affects consumers' attitudes and intentions to make purchases, especially when the celebrity is viewed as reputable and trustworthy.
+
+The intricacy of consumer behavior and the range of variables that might affect people's purchase decisions are generally highlighted by these research. Understanding these elements can aid organizations in creating marketing plans that successfully target consumers.[@haghshenas2013review]
+
+
+
+
+**References section is created automatically by Rmarkdown. There is no need to change the references section in the draft file.**
+
+**_You shouldn't delete the last 3 lines. Those lines are required for References section._**
+
+\newpage
+# References {#references}
+<div id="refs"></div>
+
