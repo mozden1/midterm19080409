@@ -1,0 +1,264 @@
+---
+title: "Factors That Affect Purchasing Desicions"
+author: 
+  - ÖZDEN, Mehmet[^1]
+bibliography: ../bibliography/biblio.bib
+csl: ../csl/apa.csl
+header-includes:
+  - \usepackage{polyglossia}
+  - \setmainlanguage{english}
+  - \usepackage{booktabs}
+  - \usepackage{caption} 
+  - \captionsetup[table]{skip=10pt}
+output:
+  bookdown::pdf_document2:
+    fig_caption: yes
+    fig_height: 3
+    fig_width: 4
+    keep_tex: no
+    latex_engine: xelatex
+    number_sections: yes
+    toc: no
+geometry: margin=1in
+link-citations: yes
+urlcolor: blue
+fontsize: 12pt
+biblio-style: apalike
+abstract: |
+   This report examines the factors that influence people's purchase decisions in the context of modern shopping. Specifically, it focuses on the impact of user-generated comments under products, YouTube videos, influencers, and personal recommendations from friends and relatives. A survey with 51 participants was conducted to gather data and analyze the findings.
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(cache = FALSE, echo = TRUE, message = FALSE, warning = FALSE)
+```
+
+<!-- ======================================================================= -->
+<!-- ============================== FOOTNOTES ============================== -->
+<!-- ======================================================================= -->
+[^1]: 19080409, [Github Repo](https://github.com/YOUR_USER_NAME_HERE/YOUR_REPO_NAME_HERE)
+
+
+
+# Introduction
+In the modern world, that is, nowadays,shopping has evolved to a very different side from buying the things we need anymore.The biggest reason for this evolution is that the marketing policies of companies are very advanced.In this study, I want to investigate according to which criteria people make these purchasing decisions.To investigate this, I conducted a survey on google and asked people questions about their shopping habits.People answered the majority of the survey at a young age, and the proportion of men and women who answered the survey was kept equal in order to ensure that the sample was correct.
+
+## Literature Review
+
+Consumer behavior is a broad field that includes many variables that affect people's purchasing behavior.[@chikweche2010understanding] The various factors that influence consumers to purchase particular goods or services have been the subject of several research. Chikweche and Fletcher (2010) concentrated on subsistence markets and discovered various elements, such as cultural values, social interactions, product availability, and pricing, that influence customer purchases. Similar to this, Kidane and Sharma (2016) looked at what influences consumers' e-commerce platform purchases and discovered that characteristics like product quality, trust, ease, and website design were important motivators.
+
+In addition to these elements, Mirabi, Akbariyeh, and Tahmasebifard (2015)[@mirabi2015study] discovered that the qualities of the product, brand reputation, perceived risk, and price sensitivity had a substantial impact on customers' purchase intentions. The literature on consumer behavior was examined by Haghshenas, Abedi, Ghorbani, Kamali, and Harooni in 2013.based on a review of the literature on consumer behavior, a variety of elements, such as demographic traits, way of life, drive, attitude, and perception, might influence buying decisions.[@kidane2016factors]
+
+
+In a 2012 study, Azzadina, Huda, and Sianipar explored the connections [@azzadina2012understanding]between personality types, elements of the marketing mix, and consumer behavior. They discovered that personality qualities can have a big impact on how people feel and what they decide to buy. For example, those who score highly on being open to new experiences are more likely to be influenced by marketing mix elements like product design, promotions, and pricing. Additionally, they discovered that consumers with high conscientiousness scores are more likely to base their selections on brand reputation and product quality.
+
+Finally, Wachyuni and Priyambodo (2020) [@wachyuni2020influence]looked into how celebrity endorsements affected restaurant patrons' decisions to buy certain items.decisions. They discovered that celebrity endorsement greatly affects consumers' attitudes and intentions to make purchases, especially when the celebrity is viewed as reputable and trustworthy.
+
+The intricacy of consumer behavior and the range of variables that might affect people's purchase decisions are generally highlighted by these research. Understanding these elements can aid organizations in creating marketing plans that successfully target consumers.[@haghshenas2013review]
+
+
+# Data
+In order to conduct this study, I created a survey using Google Forms and shared it with people to gather data. Afterwards, I translated the column names and other data into English on Google Sheets
+
+The age of the surveyed participants ranges from 18 to 46 years.Participants indicated that comments under the product when buying a product affect their purchase decision.The ratings for the influence of comments range from 1 to 10, with a mean rating of 7.51.
+Influence of YouTube Videos on Purchase Decision:Participants indicated that YouTube videos of the product when buying a product affect their purchase decision.The ratings for the influence of YouTube videos range from 1 to 10, with a mean rating of 5.333.
+Influence of Introducing the Product by an Influencer on Purchase Decision:Participants indicated that introducing the product by an influencer when buying a product affects their purchase decision.The ratings for the influence of influencers range from 1 to 10, with a mean rating of 3.647.Influence of Recommendation by a Friend/Relative on Purchase Decision:Participants indicated that recommendations of the product by a friend or relative when buying a product affect their purchase decision.
+The ratings for the influence of recommendations range from 5 to 10, with a mean rating of 8.275.
+Overall, this summary highlights certain aspects of consumer shopping preferences, including the influence of comments, YouTube videos, influencers, and recommendations from friends/relatives on purchase decisions. However, specific details regarding the most preferred shopping method, the product category participants shop the most, gender distribution, job occupations, shopping frequency, and average shopping budget per year are  included in the summary.
+
+
+
+
+
+
+
+```{r, echo=FALSE}
+library(readxl)
+yanıt<- read_excel("C:/Users/MEHMET/Desktop/ders/R/Final/data/Yeni XLSX Worksheet.xlsx")
+library(xtable) 
+library(summarytools)
+st_options(lang = "en")
+
+```
+
+
+
+
+
+# Methods and Data Analysis
+
+The main objective of our research is to examine the factors that influence people's purchase decisions. To achieve this, we conducted a survey with 51 participants, and the summary information about the survey is provided above. In this section, we will explore the correlations among the responses given by the participants to determine if there are any correlations among these factors. Furthermore, we will analyze the extent to which each factor influences individuals, examine potential gender-based differences in the effects, and draw conclusions based on these findings. The four fundamental questions asked in our survey were as follows:
+
+"Do comments under a product influence my purchase decision?"
+"Does a YouTube video about a product influence my purchase decision?"
+"Does a product being promoted by an influencer influence my purchase decision?"
+"Does a product recommendation from a friend/acquaintance influence my purchase decision?"
+Let's analyze the correlation coefficients obtained from the participants' responses.
+
+```{r, echo = FALSE}
+library(readxl)
+yanıt <- read_excel("C:/Users/MEHMET/Desktop/ders/R/Final/data/Yeni XLSX Worksheet.xlsx")
+library(tidyverse)
+yanıtc<- na.omit(yanıt)
+GGally::ggpairs(yanıtc[ ,c("Comments", "Youtube", "Infuencer","Recommendation")])
+```
+Correlation Coefficients:
+
+Correlation between _Comments_ and _YouTube_ (0.51):
+The correlation coefficient of 0.51 suggests a moderate positive correlation between comments and YouTube. This indicates that there is a significant association between the comments received and the presence of related YouTube videos.
+Correlation between _Comments_ and _Influencers_ (0.10):
+The correlation coefficient of 0.10 indicates a weak positive correlation between comments and influencers.  comments.
+Correlation between _Comments_ and _Recommendations_ (0.19):
+The correlation coefficient of 0.19 suggests a weak positive correlation between comments and recommendations. section.
+Correlation between _YouTube_ and _Influencers_ (0.15):
+The correlation coefficient of 0.15 indicates a weak positive correlation between YouTube and influencers. 
+
+Correlation between _Influencers_ and _Recommendations_ (-0.25):
+The correlation coefficient of -0.25 suggests a weak negative correlation between influencers and recommendations. This unexpected negative correlation implies that as the number of influencers increases, there may be a slight decrease in the number of recommendations. Further investigation would be necessary to understand the underlying factors contributing to this relationship.
+
+The analysis of the correlation coefficients suggests that comments and YouTube have a moderate positive correlation, indicating a significant association between user engagement and the presence of related YouTube videos. The influence of influencers and recommendations on comments is relatively weak, implying that other factors may play a more significant role in driving user engagement and purchase decisions. Additionally, the unexpected negative correlation between influencers and recommendations warrants further investigation.
+
+It is important to note that correlation does not imply causation. Therefore, these findings should be considered as initial insights, and additional research should be conducted to gain a more comprehensive understanding of the factors influencing purchase decisions.
+
+In today's digital era, the power of online shopping has become increasingly prevalent. As consumers, we are often faced with an abundance of options and information when making purchase decisions. One crucial factor that significantly influences our choices is the presence of product reviews. These reviews, written by fellow customers, have a powerful impact on our buying decisions. In this article, we will explore how product reviews affect our purchasing choices and why they hold such importance in our decision-making process.
+To conduct this analysis, we collected data on comment ratings from a survey. The ratings were given on a scale of 1 to 10, with 10 representing the highest rating. We categorized the ratings based on the gender of the users, distinguishing between male and female respondents. The dataset included 29 male and 22 female comments  resulting in a sample size of 51 comments.
+
+```{r, echo = FALSE}
+  ggplot(data=yanıtc ,aes(x =Gender, y =Comments)) +
+  geom_boxplot() +
+  labs(x = "gender",
+       y = "Comments") 
+  yanıt %>% 
+  select(Gender, Comments,) %>% 
+  table()
+summary(yanıtc$Comments)
+```
+The mean rating assigned by male users was 7.51, while female users gave a slightly lower mean rating of 7.07. This indicates that, on average, male users rated the comments slightly higher than their female counterparts. However, it is important to note that the difference in mean ratings between the two genders is relatively small.
+
+Minimum Rating: The minimum rating observed was 1.00. 
+
+First Quartile: The first quartile (1st Qu.) value of 7.00 indicates that 25% of the comments received ratings below this threshold. This suggests a considerable proportion of comments that were  higly rated.This is almost equal for both genders
+
+Median Rating: The median rating of 8.00 represents the middle point of the rating distribution.This rating is about 8,5 for males and 8,0 for females
+
+Mean Rating: The mean rating of 7.51 reflects the average rating assigned to the comments. This suggests that, on average, the comments were generally positively rated. However, the mean rating also indicates that the comments did not receive exceptionally high ratings.This rating is about 8 for males and 7 for females
+
+Third Quartile: The third quartile (3rd Qu.) value of 9.00 indicates that 75% of the comments received ratings below this threshold. This suggests that a significant proportion of comments were rated relatively high, with positive feedback from users.This rating is about 8,5 for males and 8,0 for females
+
+Maximum Rating: The maximum rating observed was 10.00, 
+
+As seen, the comments below the product have a significant impact on the product purchasing process. Additionally, there is no noticeable difference in the gender-based analysis.
+```{r, echo = FALSE}
+ ggplot(data=yanıtc ,aes(x =Gender, y = Youtube)) +
+  geom_boxplot() +
+  labs(x = "gender",
+       y = "Youtube") 
+ 
+ yanıt %>% 
+  select(Gender, Youtube,) %>% 
+  table()
+summary(yanıtc$Youtube)
+```
+ In recent years, YouTube has become a prominent platform for sharing and consuming video content, including product review videos. As consumers, we often rely on these videos to gather information, gain insights, and make informed purchase decisions. This report aims to explore the impact of YouTube review videos on the purchasing process, emphasizing their significance in shaping consumer decisions.
+ 
+  The minimum rating observed was 1.000
+  
+ The first quartile (1st Qu.) value of 2.000 .This rating is about 3 for males and 1 for females
+
+Median Rating: The median rating of 5.000 reflecting a relatively neutral sentiment among viewers.This rating is about 8 for males and 3,8 for females
+
+Mean Rating: The mean rating of 5.333 This rating is about 6 for males and 4 for females
+
+Third Quartile: The third quartile (3rd Qu.) value of 8.000 This suggests that a significant proportion of ratings were relatively high, indicating positive feedback from viewers.This rating is about 9 for males and 6 for females
+
+
+Research suggests that men and women tend to have different content preferences on YouTube. For example, men may gravitate towards technology, gaming, and automotive-related content, while women may be more interested in beauty, fashion, and lifestyle content. These preferences influence the types of products they seek information about and ultimately purchase.
+ The maximum rating observed was 10.000 
+```{r, echo = FALSE}
+  ggplot(data=yanıtc ,aes(x =Gender, y = Infuencer)) +
+  geom_boxplot() +
+  labs(x = "gender",
+       y = "Infuencer") 
+  yanıt %>% 
+  select(Gender, Infuencer,) %>% 
+  table()
+summary(yanıtc$Infuencer)
+```
+Influencers as Key Decision-Makers:
+In recent years, influencers have gained significant prominence in the digital space, particularly on platforms like YouTube. They have become powerful opinion leaders who can shape consumer perceptions and influence their purchasing decisions. This report seeks to explore the effectiveness of influencer marketing by analyzing the statistical data.
+ The minimum rating observed was 1
+
+First Quartile: The first quartile (1st Qu.) value of 1.500 . This suggests that a significant proportion of viewers felt little to no influence from the influencer's content when making purchasing decisions.This value is about 1,0 for males and 3,0 for females
+
+Median Rating: The median rating of 3 , suggesting a moderate level of influence from the influencers.
+
+Mean Rating: The mean rating of 3.647  This suggests that, on average, influencers play a moderate role in shaping consumer behavior.This value is about 2,48 for males and 5 for females
+
+Third Quartile: The third quartile (3rd Qu.) value of 5.000  This suggests that a significant proportion of viewers were moderately influenced by the influencers' recommendations when making purchasing decisions.This value is about 3 for males and 6for females
+
+ The maximum rating observed was 10.000
+ It is evident that influencers have a greater impact on women compared to men. As a result, companies allocate more advertising resources to female influencers, even if they have a smaller following. This report aims to explore the reasons behind this phenomenon and how it influences advertising strategies.
+```{r, echo = FALSE}
+   
+   ggplot(data=yanıtc ,aes(x =Gender, y = Recommendation)) +
+  geom_boxplot() +
+  labs(x = "gender",
+       y = "Recommendation") 
+yanıt %>% 
+  select(Gender, Recommendation,) %>% 
+  table()
+summary(yanıtc$Recommendation)
+
+
+
+
+
+```
+
+The Power of Word-of-Mouth Recommendations:
+Personal recommendations from friends and family have long been recognized as powerful drivers of consumer behavior. The opinions and experiences shared by close acquaintances can significantly influence purchasing decisions by building trust, providing valuable insights, and reducing perceived risks.
+Minimum Rating: The minimum rating observed was 5.000, indicating instances where recommendations from friends and family had a moderate impact on purchasing decisions. These ratings suggest that, in general, the influence of personal recommendations was substantial, as even the lowest rating was above the midpoint of the scale.
+
+First Quartile: The first quartile (1st Qu.) value of 8.000  This suggests that a significant proportion of individuals experienced a strong influence from personal recommendations when making purchasing decisions.
+
+Median Rating: The median rating of 9.000  suggesting that personal recommendations consistently had a substantial impact on consumers' purchasing decisions.
+
+Mean Rating: The mean rating of 8.275  these recommendations played a significant role in shaping consumer behavior.
+
+Third Quartile: The third quartile (3rd Qu.) value of 9.500  reinforcing their effectiveness in driving purchasing decisions.
+
+ The maximum rating observed was 10.000, 
+
+In conclusion, recommendations by friends and family have a substantial impact on purchasing decisions. The statistical analysis reveals consistently high ratings, indicating that personal recommendations are highly valued and influential in consumer decision-making processes. Businesses and marketers should recognize the power of word-of-mouth marketing and leverage strategies to encourage and amplify positive recommendations, as they can significantly impact brand perception and drive sales.
+
+
+
+
+
+
+# Conclusion
+```{r, echo = FALSE}
+
+summary(yanıtc$Recommendation)
+summary(yanıtc$Infuencer)
+summary(yanıtc$Youtube)
+summary(yanıtc$Comments)
+```
+This report has examined the variables that affect people's purchasing choices in the setting of contemporary retail. The study concentrated on the influence of YouTube videos, influencers, and recommendations from friends and family as well as comments under items. A poll with 51 participants yielded some significant conclusions.
+First, participants gave product reviews a mean rating of 7.51, indicating a strong influence on participants' decisions to buy. This demonstrates how crucial user feedback is in influencing customer decisions. Additionally, there was no discernible gender difference in the impact of remarks.
+Second, with a mean rating of 5.333, YouTube videos were discovered to have a moderate influence on buying decisions. This implies that people seek information from video material.important information while choosing what to buy. Males generally rated the influence of YouTube videos higher than females, according to the gender analysis.
+Thirdly, a mean rating of 3.647 revealed that the effect of influencers was only somewhat strong. Although influencers help to shape consumer behavior, other factors may have a bigger influence. Notably, females were shown to be more influenced by influencers than were males.
+Last but not least, with a mean rating of 8.275, personal recommendations from friends and family had a significant influence on purchasing decisions. The value and influence of these suggestions were consistently high, demonstrating the effectiveness of word-of-mouth advertising.
+The importance of numerous elements in influencing consumers' purchase decisions is generally highlighted by this research. It highlights the significance of user-generated content, YouTube, andInfluential elements include videos, influencers, and personal recommendations. According to the research, companies and marketers that want to effectively target consumers should think about including these elements into their marketing plans.
+In the future, more research may examine the underlying causes of the gender variations in the influence of YouTube videos and influencers that have been observed. Investigating the particular product categories and demographic traits that influence consumer behavior would also yield insightful results. Additionally, comprehending the interactions between these elements and conventional marketing strategies could assist businesses in creating thorough marketing strategies.
+In conclusion, in the current digital era, a variety of factors affect consumers' purchase decisions. Businesses can better comprehend and serve the preferences and decision-making of their customers by understanding the importance of user-generated comments, YouTube videos, influencers, and personal recommendations. processes of their target audience.
+
+
+
+
+
+
+
+
+\newpage
+# References {#references}
+<div id="refs"></div>
+
